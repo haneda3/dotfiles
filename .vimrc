@@ -17,10 +17,10 @@ if has('vim_starting')
 	        call neobundle#rc(expand('~/.vim/bundle'))
 	endif
 
-	NeoBundle 'git://github.com/kien/ctrlp.vim.git'
-	NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-	NeoBundle 'git://github.com/scrooloose/nerdtree.git'
-	NeoBundle 'git://github.com/scrooloose/syntastic.git'
+  NeoBundle 'http://github.com/kien/ctrlp.vim.git'
+	NeoBundle 'http://github.com/Shougo/neobundle.vim.git'
+	NeoBundle 'http://github.com/scrooloose/nerdtree.git'
+	NeoBundle 'http://github.com/scrooloose/syntastic.git'
 
 	syntax on
 	filetype plugin on
