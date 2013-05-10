@@ -26,6 +26,9 @@ if has('vim_starting')
 	filetype plugin on
 	filetype indent on
 
+  " show line number
+  set number
+
   " urabuffer
   nnoremap <C-j> <C-^>
 
