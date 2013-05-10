@@ -29,6 +29,9 @@ if has('vim_starting')
   " urabuffer
   nnoremap <C-j> <C-^>
 
+  " visual beep
+  set visualbell
+
 	" SSH クライアントの設定によってはマウスが使える（putty だと最初からい
 	" ける）
 	"set mouse=n
