@@ -5,3 +5,18 @@ export PATH=$PATH:$HOME/bin/bin
 # git editor
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
+# == tmux configuration =======
+if [ -z "$PS1" ]; then 
+    return ;
+fi
+
+if [ -z $TMUX ] ; then
+    if [ -z `tmux ls` ] ; then
+        tmux
+    else
+        tmux attach
+    fi
+fi
+# =============================
+
+
