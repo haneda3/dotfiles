@@ -14,4 +14,8 @@ cd ~/tmp/tmux-1.8/
 make
 make install
 
+echo ""
+echo "add .bashrc or .bash_profile" 
+echo "export LD_LIBRARY_PATH=$HOME/bin/lib"
+echo ""
 
