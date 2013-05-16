@@ -19,4 +19,6 @@ if [ -z $TMUX ] ; then
 fi
 # =============================
 
+# not verify ssl for perl package install
+export PERL_LWP_SSL_VERIFY_HOSTNAME=0
 
