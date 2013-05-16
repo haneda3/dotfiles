@@ -12,9 +12,9 @@ fi
 
 if [ -z $TMUX ] ; then
     if [ -z `tmux ls` ] ; then
-        tmux
+        tmux new-session && echo "tmux create new session"
     else
-        tmux attach
+        tmux attach && echo "tmux attached session"
     fi
 fi
 # =============================
