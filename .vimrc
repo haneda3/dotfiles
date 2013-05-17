@@ -11,31 +11,35 @@ set shiftwidth=2
 set nocompatible
 
 if has('vim_starting')
-	  filetype plugin off
-	    filetype indent off
-	      execute 'set runtimepath+=' . expand('~/.vim/bundle/neobundle.vim')
-	        call neobundle#rc(expand('~/.vim/bundle'))
-	endif
+  filetype plugin off
+  filetype indent off
+  execute 'set runtimepath+=' . expand('~/.vim/bundle/neobundle.vim')
+  call neobundle#rc(expand('~/.vim/bundle'))
+endif
 
-  NeoBundle 'http://github.com/kien/ctrlp.vim.git'
-	NeoBundle 'http://github.com/Shougo/neobundle.vim.git'
-	NeoBundle 'http://github.com/scrooloose/nerdtree.git'
-	NeoBundle 'http://github.com/scrooloose/syntastic.git'
+NeoBundle 'http://github.com/kien/ctrlp.vim.git'
+NeoBundle 'http://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'http://github.com/scrooloose/nerdtree.git'
+NeoBundle 'http://github.com/scrooloose/syntastic.git'
+NeoBundle 'http://github.com/Shougo/neocomplcache.vim.git'
 
-	syntax on
-	filetype plugin on
-	filetype indent on
+syntax on
+filetype plugin on
+filetype indent on
 
-  " show line number
-  set number
+" show line number
+set number
 
-  " urabuffer
-  nnoremap <C-j> <C-^>
+" urabuffer
+nnoremap <C-j> <C-^>
 
-  " visual beep
-  set visualbell
+" visual beep
+set visualbell
 
-	" SSH クライアントの設定によってはマウスが使える（putty だと最初からい
-	" ける）
-	"set mouse=n
+" SSH クライアントの設定によってはマウスが使える（putty だと最初からい
+" ける）
+"set mouse=n
+
+"
+let g:neocomplcache_enable_at_startup = 1
 
