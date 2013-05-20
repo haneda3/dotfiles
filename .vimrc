@@ -30,7 +30,7 @@ filetype indent on
 
 " color scheme
 syntax enable
-set background=darkt
+set background=dark
 colorscheme solarized
 
 " show line number
