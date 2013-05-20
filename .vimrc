@@ -49,6 +49,11 @@ augroup filetypedetect
   autocmd! BufNewFile,BufRead *.tt setf tt2html
 augroup END
 
+" indent for filetype
+augroup vimrc
+  autocmd! FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
+augroup END
+
 " show line number
 set number
 
