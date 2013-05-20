@@ -31,7 +31,23 @@ filetype indent on
 " color scheme
 syntax enable
 set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_degrade=0
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_termtrans=1
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 colorscheme solarized
+
+" perl highlight
+augroup filetypedetect
+  autocmd! BufNewFile,BufRead *.t setf perl
+  autocmd! BufNewFile,BufRead *.psgi setf perl
+  autocmd! BufNewFile,BufRead *.tt setf tt2html
+augroup END
 
 " show line number
 set number
