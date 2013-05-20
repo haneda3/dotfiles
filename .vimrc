@@ -22,10 +22,16 @@ NeoBundle 'http://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'http://github.com/scrooloose/nerdtree.git'
 NeoBundle 'http://github.com/scrooloose/syntastic.git'
 NeoBundle 'http://github.com/Shougo/neocomplcache.vim.git'
+NeoBundle 'http://github.com/altercation/vim-colors-solarized.git'
 
 syntax on
 filetype plugin on
 filetype indent on
+
+" color scheme
+syntax enable
+set background=darkt
+colorscheme solarized
 
 " show line number
 set number
