@@ -34,7 +34,6 @@ if [ `uname` = "Darwin" ]; then
     alias ll="ls -al"
 elif [ `uname` = "Linux" ]; then
     # for linux
-    env
 fi
 
 
