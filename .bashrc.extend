@@ -1,5 +1,5 @@
 # bash
-alias ls='ls -G'
+#alias ls='ls -G'
 #export PS1="[\e[1;33m\]\h:\u\e[0;37m\]:\w\e[1;32m\]\$(__git_ps1)\e[0;37m\]]\n\$"
 
 # tmux path
@@ -28,4 +28,14 @@ fi
 
 # not verify ssl for perl package install
 export PERL_LWP_SSL_VERIFY_HOSTNAME=0
+
+if [ `uname` = "Darwin" ]; then
+    # for Mac
+    alias ll="ls -al"
+elif [ `uname` = "Linux" ]; then
+    # for linux
+    env
+fi
+
+
 
