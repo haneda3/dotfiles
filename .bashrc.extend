@@ -9,6 +9,9 @@ export PATH=$PATH:$HOME/bin/bin
 # git editor
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
+# git global ignore
+git config --global core.excludesfile "$HOME/dotfiles/.gitignore"
+
 # == tmux configuration =======
 if [ -z "$PS1" ]; then 
     return ;
