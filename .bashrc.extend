@@ -32,9 +32,12 @@ export PERL_LWP_SSL_VERIFY_HOSTNAME=0
 if [ `uname` = "Darwin" ]; then
     # for Mac
     alias ll="ls -al"
+    
+    # rbenv
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
 elif [ `uname` = "Linux" ]; then
     # for linux
 fi
-
 
 
