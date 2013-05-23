@@ -12,32 +12,36 @@ git config --global core.editor 'vim -c "set fenc=utf-8"'
 # git global ignore
 git config --global core.excludesfile "$HOME/dotfiles/.gitignore"
 
-# == tmux configuration =======
-if [ -z "$PS1" ]; then 
-    return ;
-fi
-
-if [ -z $TMUX ] ; then
-    if [ -z `tmux ls` ] ; then
-        tmux new-session && echo "tmux create new session"
-    else
-        tmux attach && echo "tmux attached session"
-    fi
-fi
-# =============================
-
 # not verify ssl for perl package install
 export PERL_LWP_SSL_VERIFY_HOSTNAME=0
 
-if [ `uname` = "Darwin" ]; then
-    # for Mac
-    alias ll="ls -al"
-    
-    # rbenv
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-elif [ `uname` = "Linux" ]; then
-    # for linux
-fi
+# tmux boot or attach
+boot_tmux ()
+{
+  if [ -z "$PS1" ]; then 
+    return ;
+  fi
 
+  if [ -z $TMUX -a `uname` = "Linux" ] ; then
+    if [ -z `tmux ls` ] ; then
+      tmux new-session && echo "tmux create new session"
+    else
+      tmux attach && echo "tmux attached session"
+    fi
+  fi
+}
+
+if [ `uname` = "Darwin" ]; then
+  # for Mac
+  alias ll="ls -al -h"
+  source ~/perl5/perlbrew/etc/bashrc
+
+  # rbenv
+  alias ll="ll -h"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+elif [ `uname` = "Linux" ]; then
+  # for linux
+  boot_tmux
+fi
 
