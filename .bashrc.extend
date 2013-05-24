@@ -15,6 +15,9 @@ git config --global core.excludesfile "$HOME/dotfiles/.gitignore"
 # not verify ssl for perl package install
 export PERL_LWP_SSL_VERIFY_HOSTNAME=0
 
+# no beep
+setopt no_beep
+
 # tmux boot or attach
 boot_tmux ()
 {
@@ -22,7 +25,7 @@ boot_tmux ()
     return ;
   fi
 
-  if [ -z $TMUX -a `uname` = "Linux" ] ; then
+  if [ -z $TMUX ] ; then
     if [ -z `tmux ls` ] ; then
       tmux new-session && echo "tmux create new session"
     else
