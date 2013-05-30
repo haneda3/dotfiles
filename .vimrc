@@ -61,6 +61,9 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
 
+" visual mode ,ptv as perltidy
+map ,ptv <Esc>:'<,'>! perltidy<CR>
+
 " show line number
 set number
 
