@@ -58,6 +58,16 @@ augroup vimrc
   autocmd! FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
 augroup END
 
+" highlight trailing space
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
+" visual mode ,ptv as perltidy
+map ,ptv <Esc>:'<,'>! perltidy<CR>
+
 " show line number
 set number
 
