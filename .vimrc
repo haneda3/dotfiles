@@ -10,6 +10,10 @@ set shiftwidth=2
 
 set nocompatible
 
+imap jjjj <ESC>
+imap <C-a> <HOME>
+imap <C-e> <END>
+
 if has('vim_starting')
   filetype plugin off
   filetype indent off
