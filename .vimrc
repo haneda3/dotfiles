@@ -77,9 +77,12 @@ nnoremap <C-j> <C-^>
 " visual beep
 set visualbell
 
-" SSH クライアントの設定によってはマウスが使える（putty だと最初からい
-" ける）
-"set mouse=n
+" mouse support
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 "
 let g:neocomplcache_enable_at_startup = 1
