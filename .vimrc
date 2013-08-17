@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 set encoding=utf-8
-set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
+set fileencodings=utf-8,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932
 
 set expandtab
 set tabstop=2
@@ -11,8 +11,8 @@ set shiftwidth=2
 set nocompatible
 
 imap jjjj <ESC>
-imap <C-a> <HOME>
-imap <C-e> <END>
+nnoremap <C-a> <HOME>
+nnoremap <C-e> <END>
 
 if has('vim_starting')
   filetype plugin off
@@ -27,6 +27,7 @@ NeoBundle 'http://github.com/scrooloose/nerdtree.git'
 NeoBundle 'http://github.com/scrooloose/syntastic.git'
 NeoBundle 'http://github.com/Shougo/neocomplcache.vim.git'
 NeoBundle 'http://github.com/altercation/vim-colors-solarized.git'
+NeoBundle 'http://github.com/Shougo/unite.vim.git'
 
 syntax on
 filetype plugin on
@@ -97,10 +98,10 @@ if has('vim_starting') &&  file_name == ""
     autocmd VimEnter * call ExecuteNERDTree()
 endif
 
-" $B%+!<%=%k$,30$l$F$$$k$H$-$O<+F0E*$K(Bnerdtree$B$r1#$9(B
+" カーソルが外れているときは自動的にnerdtreeを隠す
 function! ExecuteNERDTree()
-  "b:nerdstatus = 1 : NERDTree $BI=<(Cf(B
-  "b:nerdstatus = 2 : NERDTree $BHsI=<(Cf(B
+  "b:nerdstatus = 1 : NERDTree 表示中
+  "b:nerdstatus = 2 : NERDTree 非表示中
 
   if !exists('g:nerdstatus')
     execute 'NERDTree ./'
@@ -120,6 +121,11 @@ function! ExecuteNERDTree()
 
   endif
 endfunction
-noremap <c-e> :<c-u>:call ExecuteNERDTree()<cr>
-"</cr></c-u></c-e>
+
+" NERDTree toggle on/off
+nnoremap <F3> :<C-u>:call ExecuteNERDTree()<cr>
+
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> <F4> :<C-u>Unite buffer<CR>
 
