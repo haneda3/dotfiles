@@ -28,6 +28,7 @@ NeoBundle 'http://github.com/scrooloose/syntastic.git'
 NeoBundle 'http://github.com/Shougo/neocomplcache.vim.git'
 NeoBundle 'http://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'http://github.com/Shougo/unite.vim.git'
+NeoBundle 'http://github.com/Shougo/vimfiler.vim.git'
 
 syntax on
 filetype plugin on
@@ -124,6 +125,9 @@ endfunction
 
 " NERDTree toggle on/off
 nnoremap <F3> :<C-u>:call ExecuteNERDTree()<cr>
+
+" NERDTree change window
+nnoremap <F2> <C-w>w
 
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
