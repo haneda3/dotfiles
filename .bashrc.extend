@@ -54,7 +54,11 @@ login_ssh_agent()
 if [ `uname` = "Darwin" ]; then
   # for Mac
   alias ll="ls -al -h"
-  source ~/perl5/perlbrew/etc/bashrc
+  export PERLBREW_ROOT=$HOME/perlbrew
+  export PERLBREW_HOME=$PERLBREW_ROOT
+  source $PERLBREW_HOME/etc/bashrc
+  #source ~/perl5/perlbrew/etc/bashrc
+  source ~/.mysqlenv/etc/bashrc
 
   # rbenv
   alias ll="ll -h"
