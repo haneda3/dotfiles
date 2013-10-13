@@ -11,8 +11,10 @@ set shiftwidth=2
 set nocompatible
 
 imap jjjj <ESC>
-nnoremap <C-a> <HOME>
-nnoremap <C-e> <END>
+noremap <C-a> <HOME>
+noremap <C-e> <END>
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
 
 if has('vim_starting')
   filetype plugin off
@@ -29,10 +31,14 @@ NeoBundle 'http://github.com/Shougo/neocomplcache.vim.git'
 NeoBundle 'http://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'http://github.com/Shougo/unite.vim.git'
 NeoBundle 'http://github.com/Shougo/vimfiler.vim.git'
+NeoBundle 'http://github.com/nathanaelkane/vim-indent-guides.git'
 
 syntax on
 filetype plugin on
 filetype indent on
+
+" witchwarp
+set whichwrap=b,s,h,l,<,>,[,],~
 
 " color scheme
 syntax enable
@@ -51,6 +57,13 @@ colorscheme solarized
 " status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
+
+" indent guideline
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_space_guides = 1
 
 " perl highlight
 augroup filetypedetect
