@@ -6,6 +6,7 @@
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/bin/lib
 export PATH=$PATH:$HOME/bin/bin
 
+# pebble sdk
 if [ -d ~/dev/pebble-dev/ ]; then
   export PATH=~/dev/pebble-dev/arm-cs-tools/bin:$PATH
 fi
@@ -58,16 +59,23 @@ login_ssh_agent()
 if [ `uname` = "Darwin" ]; then
   # for Mac
   alias ll="ls -al -h"
-  export PERLBREW_ROOT=$HOME/perlbrew
-  export PERLBREW_HOME=$PERLBREW_ROOT
-  source $PERLBREW_HOME/etc/bashrc
-  #source ~/perl5/perlbrew/etc/bashrc
-  source ~/.mysqlenv/etc/bashrc
+  if [ -d $HOME/perlbrew ]; then
+    export PERLBREW_ROOT=$HOME/perlbrew
+    export PERLBREW_HOME=$PERLBREW_ROOT
+    source $PERLBREW_HOME/etc/bashrc
+  fi
+  if [ -d $HOME/perl5/perlbrew ]; then
+    source $HOME/perl5/perlbrew/etc/bashrc
+  fi
+  if [ -d ~/.mysqlenv ]; then
+    source ~/.mysqlenv/etc/bashrc
+  fi
 
   # rbenv
-  alias ll="ll -h"
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+  if [ -d $HOME/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+  fi
 elif [ `uname` = "Linux" ]; then
   # for linux
   boot_tmux

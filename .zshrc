@@ -48,6 +48,10 @@ source $ZSH/oh-my-zsh.sh
 . $HOME/dotfiles/.bashrc.extend
 
 # add ssh agent keys
-ssh-add ~/.ssh/work_ghe_rsa
-ssh-add ~/.ssh/github_id_rsa
+if [ -S ~/ssh/work_ghe_rsa ]; then
+  ssh-add ~/.ssh/work_ghe_rsa
+fi
+if [ -S ~/ssh/github_id_rsa ]; then
+  ssh-add ~/.ssh/github_id_rsa
+fi
 
