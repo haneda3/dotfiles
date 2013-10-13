@@ -6,6 +6,10 @@
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/bin/lib
 export PATH=$PATH:$HOME/bin/bin
 
+if [ -d ~/dev/pebble-dev/ ]; then
+  export PATH=~/dev/pebble-dev/arm-cs-tools/bin:$PATH
+fi
+
 # git editor
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
@@ -21,7 +25,7 @@ setopt no_beep
 # tmux boot or attach
 boot_tmux ()
 {
-  if [ -z "$PS1" ]; then 
+  if [ -z "$PS1" ]; then
     return ;
   fi
 
