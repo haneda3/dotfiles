@@ -41,18 +41,22 @@ filetype indent on
 set whichwrap=b,s,h,l,<,>,[,],~
 
 " color scheme
-syntax enable
-set background=dark
 set t_Co=256
+syntax on
+set background=dark
 let g:solarized_termcolors=256
-let g:solarized_degrade=0
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
 let g:solarized_termtrans=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"colorscheme railscasts
+"colorscheme hybrid
+"colorscheme twilight
 colorscheme solarized
+"let g:solarized_degrade=0
+"let g:solarized_bold=1
+"let g:solarized_underline=1
+"let g:solarized_italic=1
+"let g:solarized_termtrans=1
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 
 " status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -60,9 +64,12 @@ set laststatus=2
 
 " indent guideline
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_color_change_percent = 30
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+let g:indent_guides_color_change_percent = 10
+"let g:indent_guides_guide_size = 2
 let g:indent_guides_space_guides = 1
 
 " perl highlight
@@ -74,7 +81,7 @@ augroup END
 
 " indent for filetype
 augroup vimrc
-  autocmd! FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
+  autocmd! FileType perl setlocal shiftwidth=4 tabstop=4 softtabstop=4
 augroup END
 
 " highlight trailing space
