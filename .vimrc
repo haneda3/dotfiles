@@ -75,7 +75,9 @@ let g:indent_guides_space_guides = 1
 " perl highlight
 augroup filetypedetect
   autocmd! BufNewFile,BufRead *.t setf perl
+  autocmd! BufNewFile,BufRead *.perl setf perl
   autocmd! BufNewFile,BufRead *.psgi setf perl
+  autocmd! BufNewFile,BufRead cpanfile setf perl
   autocmd! BufNewFile,BufRead *.tt setf tt2html
 augroup END
 
