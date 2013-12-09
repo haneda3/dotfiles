@@ -62,6 +62,10 @@ colorscheme solarized
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 
+" set hidden char
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
 " indent guideline
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 1
