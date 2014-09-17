@@ -9,6 +9,7 @@ set softtabstop=2
 set shiftwidth=2
 
 set nocompatible
+set noswapfile
 
 imap jjjj <ESC>
 noremap <C-a> <HOME>
@@ -32,6 +33,7 @@ NeoBundle 'http://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'http://github.com/Shougo/unite.vim.git'
 NeoBundle 'http://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'http://github.com/nathanaelkane/vim-indent-guides.git'
+NeoBundle 'http://github.com/vim-scripts/taglist.vim'
 
 syntax on
 filetype plugin on
@@ -159,3 +161,13 @@ nnoremap <F2> <C-w>w
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> <F4> :<C-u>Unite buffer<CR>
 
+" taglist
+"set shortmess=a
+"set cmdheight=4
+set tags=tags
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags" " ctagsのコマンド
+let Tlist_Show_One_File = 1    " 現在表示中のファイルのみのタグしか表示しない
+let Tlist_Use_Right_Window = 1 " 右側にtag listのウインドうを表示する
+let Tlist_Exit_OnlyWindow = 1  " taglistのウインドウだけならVimを閉じる
+"\lでtaglistウインドウを開いたり閉じたり出来るショートカット
+map <silent> <leader>l :TlistToggle<CR>

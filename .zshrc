@@ -44,6 +44,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# AUTO_CD
+setopt AUTO_CD
+cdpath=(.. ~ ~/work ~/dev)
+setopt auto_pushd
+
+
 # Customize to your needs...
 . $HOME/dotfiles/.bashrc.extend
 
@@ -55,3 +61,7 @@ if [ -S ~/ssh/github_id_rsa ]; then
   ssh-add ~/.ssh/github_id_rsa
 fi
 
+#export PATH=$HOME/.rbenv/shims:$PATH
+eval "$(rbenv init -)"
+
+#export PATH=/usr/local/sbin:$PATH
