@@ -1,3 +1,29 @@
+function return_value() {
+  RET=$?
+  if [ ${RET} -eq 1 ]; then
+    echo “Error”
+    exit 1
+  fi
+}
+
+#######################################
+# peco hitory
+#######################################
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 # bash
 #alias ls='ls -G'
 #export PS1="[\e[1;33m\]\h:\u\e[0;37m\]:\w\e[1;32m\]\$(__git_ps1)\e[0;37m\]]\n\$"
@@ -79,6 +105,18 @@ if [ `uname` = "Darwin" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
   fi
+
+  # go
+#  type go
+#  if [[ `return_value` -ne 1 ]]; then
+#    go_path="$HOME/go"
+#    if [ ! -d $HOME/go ]; then
+#      echo "mkdir $HOME/go"
+#      mkdir "$HOME/go"
+#    fi
+#    export GOROOT=`go env GOROOT`;
+#    export GOPATH="$HOME/go"
+#  fi
 elif [ `uname` = "Linux" ]; then
   # for linux
   boot_tmux

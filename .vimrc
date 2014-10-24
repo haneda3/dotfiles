@@ -171,3 +171,4 @@ let Tlist_Use_Right_Window = 1 " 右側にtag listのウインドうを表示す
 let Tlist_Exit_OnlyWindow = 1  " taglistのウインドウだけならVimを閉じる
 "\lでtaglistウインドウを開いたり閉じたり出来るショートカット
 map <silent> <leader>l :TlistToggle<CR>
+
