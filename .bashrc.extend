@@ -96,12 +96,6 @@ if [ `uname` = "Darwin" ]; then
   if [ -d ~/.mysqlenv ]; then
     source ~/.mysqlenv/etc/bashrc
   fi
-  if [ -d ~/.nodebrew ]; then
-    export PATH=$HOME/.nodebrew/current/bin:$PATH
-  fi
-
-  # nvm
-  source $(brew --prefix nvm)/nvm.sh
 
   # rbenv
   if [ -d $HOME/.rbenv ]; then
@@ -109,6 +103,11 @@ if [ `uname` = "Darwin" ]; then
     eval "$(rbenv init -)"
   fi
 
+  # anyenv
+  if [ -d $HOME/.anyenv ]; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+  fi
   # go
 #  type go
 #  if [[ `return_value` -ne 1 ]]; then
